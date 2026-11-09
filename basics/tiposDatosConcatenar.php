@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <?php
     //TIPOS DE VARIABLES
-    //En PHP no es necesario declarar el tipo de Datos
-    $dia = 4; //TIPO INT
-    $salario = 2000000.50; //TIPO DOUBLE
-    $nombre = "Juan"; //TIPO STRING
-    $estado = true; //TIPO BOOLEAN
+    // En PHP no es necesario declarar el tipo de Datos
+    $dia = 4; // Tipo INT
+    $salario = 2000000.50; // Tipo DOUBLE
+    $nombre = "Juan"; // Tipo STRING
+    $estado = true; // Tipo BOOLEAN
 
-    //Impresion de variables
-    echo "<br>Vbl tipo entero: ".$dia;
-    echo "<br>Vbl tipo double: ".$salario;
-    echo "<br>Vbl tipo string: ".$nombre;
-    echo "<br>Vbl tipo boolean: ".$estado;
+    // Impresión de Variables
+    echo "<br> Variable tipo entero: $dia";
+    echo "<br> Variable tipo double: " . $salario;
+    echo "<br> Variable tipo string: " . $nombre;
+    echo "<br> Variable tipo boolean: " . $estado;
     echo "<hr>";
 
-    echo "{$nombre} gana \$$salario"; // Interpolacion y escape de caracteres
+    echo "$nombre tiene un salario de \$$salario"; //Interpolación y escape de caracteres
     echo "<br>";
-    $texto = sprintf("Hoy es %d",$dia);
+    $texto = sprintf("Hoy es %d", $dia);
     echo $texto;
+    echo "<br>";
     $peras = 3;
-    $manzanas = 5;
+    $manzana = 5;
     $mango = 4;
     $precioFrutas = 25500.30;
-    $texto = sprintf("soy %s y tengo %d peras, %d manzanas y %d mangos y costaron $%.2f", $nombre,$peras,$manzanas,$mango,$precioFrutas);
-    echo "<br>".$texto;
 
-    //Uso de Heredoc
+    // Uso de Sprintf 
+    $texto = sprintf("Soy %s y tengo %d peras, %d manzanas y %d mangos y costaron $%.2f", $nombre, $peras, $manzana, $mango, $precioFrutas);
+    echo "<br>" . $texto;
+
+    // Uso de Heredoc
     echo "<hr>";
+    $titulo = "Programa de Formación";
     $texto = "Análisis y Desarrollo de Software";
     $html = <<<HTML
-    <div class="card">
-           <h2>$titulo</h2>
-           <p>$texto</p>
-    </div>
+        <div class = "card">
+            <h2>$titulo</h2>
+            <p>$texto</p>
+        </div>
     HTML;
     echo $html;
 
-    /******************************/
-
-    
+    //Solución Ejercicio 1
+    echo "<hr>";
+    $numAleatorio = rand(10, 15);
+    $numerosTexto = ["Diez", "Once", "Doce", "Trece", "Catorce", "Quince"];
+    $textoNumero = $numerosTexto[$numAleatorio - 10];
+    echo "El número aleatorio es: $numAleatorio, que en texto es: $textoNumero";
     ?>
 </body>
+
 </html>
